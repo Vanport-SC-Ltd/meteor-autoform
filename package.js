@@ -1,8 +1,8 @@
 Package.describe({
-  name: "aldeed:autoform",
+  name: "vansonhk:autoform",
   summary: "Easily create forms with automatic insert and update, and automatic reactive validation.",
   git: "https://github.com/aldeed/meteor-autoform.git",
-  version: "6.2.0"
+  version: "6.3.1"
 });
 
 Package.onUse(function(api) {
