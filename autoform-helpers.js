@@ -226,6 +226,24 @@ Template.registerHelper("afFieldNames", function autoFormFieldNames(options) {
       return false;
     }
 
+
+    if (fieldDefs.autoform && fieldDefs.autoform.omitFn && typeof fieldDefs.autoform.omitFn === 'function')
+    {
+      fieldDefs.autoform.omit = fieldDefs.autoform.omitFn();
+    }
+
+    if (fieldDefs.autoform && fieldDefs.autoform.denyInsertFn && typeof fieldDefs.autoform.denyInsertFn === 'function')
+    {
+      fieldDefs.autoform.denyInsert = fieldDefs.autoform.denyInsertFn();
+    }
+
+    if (fieldDefs.autoform && fieldDefs.autoform.denyUpdateFn && typeof fieldDefs.autoform.denyUpdateFn === 'function')
+    {
+      fieldDefs.autoform.denyUpdate = fieldDefs.autoform.denyUpdateFn();
+    }
+
+
+
     // Don't include fields with autoform.omit=true
     if (fieldDefs.autoform && fieldDefs.autoform.omit === true) {
       return false;
